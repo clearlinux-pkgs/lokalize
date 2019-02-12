@@ -5,34 +5,36 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : lokalize
-Version  : 18.08.0
-Release  : 2
-URL      : https://download.kde.org/stable/applications/18.08.0/src/lokalize-18.08.0.tar.xz
-Source0  : https://download.kde.org/stable/applications/18.08.0/src/lokalize-18.08.0.tar.xz
-Source99 : https://download.kde.org/stable/applications/18.08.0/src/lokalize-18.08.0.tar.xz.sig
-Summary  : No detailed summary available
+Version  : 18.12.2
+Release  : 3
+URL      : https://download.kde.org/stable/applications/18.12.2/src/lokalize-18.12.2.tar.xz
+Source0  : https://download.kde.org/stable/applications/18.12.2/src/lokalize-18.12.2.tar.xz
+Source99 : https://download.kde.org/stable/applications/18.12.2/src/lokalize-18.12.2.tar.xz.sig
+Summary  : Computer-Aided Translation System
 Group    : Development/Tools
 License  : GFDL-1.2 GPL-2.0
-Requires: lokalize-bin
-Requires: lokalize-data
-Requires: lokalize-license
-Requires: lokalize-locales
+Requires: lokalize-bin = %{version}-%{release}
+Requires: lokalize-data = %{version}-%{release}
+Requires: lokalize-license = %{version}-%{release}
+Requires: lokalize-locales = %{version}-%{release}
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-kde
 BuildRequires : buildreq-qmake
 BuildRequires : kross-dev
+BuildRequires : perl
 BuildRequires : pkg-config
 BuildRequires : pkgconfig(hunspell)
-BuildRequires : qtbase-dev qtbase-extras mesa-dev
+BuildRequires : qtbase-dev mesa-dev
 
 %description
-No detailed description available
+# Lokalize
+[**Lokalize**](https://www.kde.org/applications/development/lokalize) is a computer-aided translation system that focuses on productivity and quality assurance. It is targeted for software translation and also integrates external conversion tools for freelance office document translation.
 
 %package bin
 Summary: bin components for the lokalize package.
 Group: Binaries
-Requires: lokalize-data
-Requires: lokalize-license
+Requires: lokalize-data = %{version}-%{release}
+Requires: lokalize-license = %{version}-%{release}
 
 %description bin
 bin components for the lokalize package.
@@ -71,26 +73,26 @@ locales components for the lokalize package.
 
 
 %prep
-%setup -q -n lokalize-18.08.0
+%setup -q -n lokalize-18.12.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1535434397
-mkdir clr-build
+export SOURCE_DATE_EPOCH=1549930115
+mkdir -p clr-build
 pushd clr-build
 %cmake ..
 make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1535434397
+export SOURCE_DATE_EPOCH=1549930115
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/lokalize
-cp COPYING %{buildroot}/usr/share/doc/lokalize/COPYING
-cp COPYING.DOC %{buildroot}/usr/share/doc/lokalize/COPYING.DOC
+mkdir -p %{buildroot}/usr/share/package-licenses/lokalize
+cp COPYING %{buildroot}/usr/share/package-licenses/lokalize/COPYING
+cp COPYING.DOC %{buildroot}/usr/share/package-licenses/lokalize/COPYING.DOC
 pushd clr-build
 %make_install
 popd
@@ -247,16 +249,8 @@ popd
 
 %files doc
 %defattr(0644,root,root,0755)
-/usr/share/doc/HTML/ca/lokalize/configure_shortcuts.png
-/usr/share/doc/HTML/ca/lokalize/configure_toolbar.png
-/usr/share/doc/HTML/ca/lokalize/default_editor_lokalize.png
-/usr/share/doc/HTML/ca/lokalize/glossary.png
 /usr/share/doc/HTML/ca/lokalize/index.cache.bz2
 /usr/share/doc/HTML/ca/lokalize/index.docbook
-/usr/share/doc/HTML/ca/lokalize/original-diff.png
-/usr/share/doc/HTML/ca/lokalize/project_overview.png
-/usr/share/doc/HTML/ca/lokalize/sync.png
-/usr/share/doc/HTML/ca/lokalize/tmview.png
 /usr/share/doc/HTML/de/lokalize/index.cache.bz2
 /usr/share/doc/HTML/de/lokalize/index.docbook
 /usr/share/doc/HTML/en/lokalize/configure_shortcuts.png
@@ -309,9 +303,9 @@ popd
 /usr/share/doc/HTML/uk/lokalize/tmview.png
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/lokalize/COPYING
-/usr/share/doc/lokalize/COPYING.DOC
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/lokalize/COPYING
+/usr/share/package-licenses/lokalize/COPYING.DOC
 
 %files locales -f lokalize.lang
 %defattr(-,root,root,-)
