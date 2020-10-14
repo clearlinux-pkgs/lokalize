@@ -6,7 +6,7 @@
 #
 Name     : lokalize
 Version  : 20.08.2
-Release  : 23
+Release  : 24
 URL      : https://download.kde.org/stable/release-service/20.08.2/src/lokalize-20.08.2.tar.xz
 Source0  : https://download.kde.org/stable/release-service/20.08.2/src/lokalize-20.08.2.tar.xz
 Source1  : https://download.kde.org/stable/release-service/20.08.2/src/lokalize-20.08.2.tar.xz.sig
@@ -83,7 +83,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1602615272
+export SOURCE_DATE_EPOCH=1602647600
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -99,7 +99,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1602615272
+export SOURCE_DATE_EPOCH=1602647600
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/lokalize
 cp %{_builddir}/lokalize-20.08.2/COPYING %{buildroot}/usr/share/package-licenses/lokalize/8cf4afb0636055f7cacd1b6955e0e8ebec7888f5
