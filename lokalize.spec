@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xBB463350D6EF31EF (heiko@shruuf.de)
 #
 Name     : lokalize
-Version  : 21.08.2
-Release  : 33
-URL      : https://download.kde.org/stable/release-service/21.08.2/src/lokalize-21.08.2.tar.xz
-Source0  : https://download.kde.org/stable/release-service/21.08.2/src/lokalize-21.08.2.tar.xz
-Source1  : https://download.kde.org/stable/release-service/21.08.2/src/lokalize-21.08.2.tar.xz.sig
+Version  : 21.08.3
+Release  : 34
+URL      : https://download.kde.org/stable/release-service/21.08.3/src/lokalize-21.08.3.tar.xz
+Source0  : https://download.kde.org/stable/release-service/21.08.3/src/lokalize-21.08.3.tar.xz
+Source1  : https://download.kde.org/stable/release-service/21.08.3/src/lokalize-21.08.3.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GFDL-1.2 GPL-2.0
@@ -75,15 +75,15 @@ locales components for the lokalize package.
 
 
 %prep
-%setup -q -n lokalize-21.08.2
-cd %{_builddir}/lokalize-21.08.2
+%setup -q -n lokalize-21.08.3
+cd %{_builddir}/lokalize-21.08.3
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1634325221
+export SOURCE_DATE_EPOCH=1636049191
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -99,11 +99,11 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1634325221
+export SOURCE_DATE_EPOCH=1636049191
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/lokalize
-cp %{_builddir}/lokalize-21.08.2/COPYING %{buildroot}/usr/share/package-licenses/lokalize/8cf4afb0636055f7cacd1b6955e0e8ebec7888f5
-cp %{_builddir}/lokalize-21.08.2/COPYING.DOC %{buildroot}/usr/share/package-licenses/lokalize/bd75d59f9d7d9731bfabdc48ecd19e704d218e38
+cp %{_builddir}/lokalize-21.08.3/COPYING %{buildroot}/usr/share/package-licenses/lokalize/8cf4afb0636055f7cacd1b6955e0e8ebec7888f5
+cp %{_builddir}/lokalize-21.08.3/COPYING.DOC %{buildroot}/usr/share/package-licenses/lokalize/bd75d59f9d7d9731bfabdc48ecd19e704d218e38
 pushd clr-build
 %make_install
 popd
