@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xBB463350D6EF31EF (heiko@shruuf.de)
 #
 Name     : lokalize
-Version  : 21.12.1
-Release  : 36
-URL      : https://download.kde.org/stable/release-service/21.12.1/src/lokalize-21.12.1.tar.xz
-Source0  : https://download.kde.org/stable/release-service/21.12.1/src/lokalize-21.12.1.tar.xz
-Source1  : https://download.kde.org/stable/release-service/21.12.1/src/lokalize-21.12.1.tar.xz.sig
+Version  : 21.12.2
+Release  : 37
+URL      : https://download.kde.org/stable/release-service/21.12.2/src/lokalize-21.12.2.tar.xz
+Source0  : https://download.kde.org/stable/release-service/21.12.2/src/lokalize-21.12.2.tar.xz
+Source1  : https://download.kde.org/stable/release-service/21.12.2/src/lokalize-21.12.2.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause GFDL-1.2 GPL-2.0 GPL-3.0 LGPL-2.1
@@ -74,15 +74,15 @@ locales components for the lokalize package.
 
 
 %prep
-%setup -q -n lokalize-21.12.1
-cd %{_builddir}/lokalize-21.12.1
+%setup -q -n lokalize-21.12.2
+cd %{_builddir}/lokalize-21.12.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1641929061
+export SOURCE_DATE_EPOCH=1643995971
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -98,17 +98,17 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1641929061
+export SOURCE_DATE_EPOCH=1643995971
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/lokalize
-cp %{_builddir}/lokalize-21.12.1/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/lokalize/9950d3fdce1cff1f71212fb5abd31453c6ee2f8c
-cp %{_builddir}/lokalize-21.12.1/LICENSES/GFDL-1.2-or-later.txt %{buildroot}/usr/share/package-licenses/lokalize/ee03d68f6be20b170e5ea5d114d6acafb3f2d1dc
-cp %{_builddir}/lokalize-21.12.1/LICENSES/GPL-2.0-only.txt %{buildroot}/usr/share/package-licenses/lokalize/3e8971c6c5f16674958913a94a36b1ea7a00ac46
-cp %{_builddir}/lokalize-21.12.1/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/lokalize/3e8971c6c5f16674958913a94a36b1ea7a00ac46
-cp %{_builddir}/lokalize-21.12.1/LICENSES/GPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/lokalize/2123756e0b1fc8243547235a33c0fcabfe3b9a51
-cp %{_builddir}/lokalize-21.12.1/LICENSES/LGPL-2.1-or-later.txt %{buildroot}/usr/share/package-licenses/lokalize/81b58c89ceef8e9f8bd5d00a287edbd15f9d3567
-cp %{_builddir}/lokalize-21.12.1/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/lokalize/7d9831e05094ce723947d729c2a46a09d6e90275
-cp %{_builddir}/lokalize-21.12.1/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/lokalize/7d9831e05094ce723947d729c2a46a09d6e90275
+cp %{_builddir}/lokalize-21.12.2/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/lokalize/9950d3fdce1cff1f71212fb5abd31453c6ee2f8c
+cp %{_builddir}/lokalize-21.12.2/LICENSES/GFDL-1.2-or-later.txt %{buildroot}/usr/share/package-licenses/lokalize/ee03d68f6be20b170e5ea5d114d6acafb3f2d1dc
+cp %{_builddir}/lokalize-21.12.2/LICENSES/GPL-2.0-only.txt %{buildroot}/usr/share/package-licenses/lokalize/3e8971c6c5f16674958913a94a36b1ea7a00ac46
+cp %{_builddir}/lokalize-21.12.2/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/lokalize/3e8971c6c5f16674958913a94a36b1ea7a00ac46
+cp %{_builddir}/lokalize-21.12.2/LICENSES/GPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/lokalize/2123756e0b1fc8243547235a33c0fcabfe3b9a51
+cp %{_builddir}/lokalize-21.12.2/LICENSES/LGPL-2.1-or-later.txt %{buildroot}/usr/share/package-licenses/lokalize/81b58c89ceef8e9f8bd5d00a287edbd15f9d3567
+cp %{_builddir}/lokalize-21.12.2/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/lokalize/7d9831e05094ce723947d729c2a46a09d6e90275
+cp %{_builddir}/lokalize-21.12.2/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/lokalize/7d9831e05094ce723947d729c2a46a09d6e90275
 pushd clr-build
 %make_install
 popd
@@ -290,6 +290,8 @@ popd
 /usr/share/doc/HTML/pt/lokalize/index.docbook
 /usr/share/doc/HTML/pt_BR/lokalize/index.cache.bz2
 /usr/share/doc/HTML/pt_BR/lokalize/index.docbook
+/usr/share/doc/HTML/ru/lokalize/index.cache.bz2
+/usr/share/doc/HTML/ru/lokalize/index.docbook
 /usr/share/doc/HTML/sr/lokalize/glossary.png
 /usr/share/doc/HTML/sr/lokalize/index.cache.bz2
 /usr/share/doc/HTML/sr/lokalize/index.docbook
