@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xBB463350D6EF31EF (heiko@shruuf.de)
 #
 Name     : lokalize
-Version  : 22.08.3
-Release  : 46
-URL      : https://download.kde.org/stable/release-service/22.08.3/src/lokalize-22.08.3.tar.xz
-Source0  : https://download.kde.org/stable/release-service/22.08.3/src/lokalize-22.08.3.tar.xz
-Source1  : https://download.kde.org/stable/release-service/22.08.3/src/lokalize-22.08.3.tar.xz.sig
+Version  : 22.12.0
+Release  : 47
+URL      : https://download.kde.org/stable/release-service/22.12.0/src/lokalize-22.12.0.tar.xz
+Source0  : https://download.kde.org/stable/release-service/22.12.0/src/lokalize-22.12.0.tar.xz
+Source1  : https://download.kde.org/stable/release-service/22.12.0/src/lokalize-22.12.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause GFDL-1.2 GPL-2.0 GPL-3.0 LGPL-2.1
@@ -21,7 +21,6 @@ BuildRequires : buildreq-cmake
 BuildRequires : buildreq-kde
 BuildRequires : buildreq-qmake
 BuildRequires : extra-cmake-modules-data
-BuildRequires : perl
 BuildRequires : pkg-config
 BuildRequires : pkgconfig(hunspell)
 
@@ -72,15 +71,15 @@ locales components for the lokalize package.
 
 
 %prep
-%setup -q -n lokalize-22.08.3
-cd %{_builddir}/lokalize-22.08.3
+%setup -q -n lokalize-22.12.0
+cd %{_builddir}/lokalize-22.12.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1667856323
+export SOURCE_DATE_EPOCH=1670511421
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -96,7 +95,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1667856323
+export SOURCE_DATE_EPOCH=1670511421
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/lokalize
 cp %{_builddir}/lokalize-%{version}/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/lokalize/9950d3fdce1cff1f71212fb5abd31453c6ee2f8c || :
@@ -138,6 +137,9 @@ popd
 /usr/share/lokalize/icons/hicolor/16x16/actions/insert_arg.png
 /usr/share/lokalize/icons/hicolor/16x16/actions/insert_tag.png
 /usr/share/lokalize/icons/hicolor/16x16/actions/l10n/sr/approved.png
+/usr/share/lokalize/icons/hicolor/16x16/actions/l10n/sr@ijekavian/approved.png
+/usr/share/lokalize/icons/hicolor/16x16/actions/l10n/sr@ijekavianlatin/approved.png
+/usr/share/lokalize/icons/hicolor/16x16/actions/l10n/sr@latin/approved.png
 /usr/share/lokalize/icons/hicolor/16x16/actions/msgid2msgstr.png
 /usr/share/lokalize/icons/hicolor/16x16/actions/nexterror.png
 /usr/share/lokalize/icons/hicolor/16x16/actions/nextfuzzy.png
@@ -158,6 +160,9 @@ popd
 /usr/share/lokalize/icons/hicolor/22x22/actions/insert_arg.png
 /usr/share/lokalize/icons/hicolor/22x22/actions/insert_tag.png
 /usr/share/lokalize/icons/hicolor/22x22/actions/l10n/sr/approved.png
+/usr/share/lokalize/icons/hicolor/22x22/actions/l10n/sr@ijekavian/approved.png
+/usr/share/lokalize/icons/hicolor/22x22/actions/l10n/sr@ijekavianlatin/approved.png
+/usr/share/lokalize/icons/hicolor/22x22/actions/l10n/sr@latin/approved.png
 /usr/share/lokalize/icons/hicolor/22x22/actions/msgid2msgstr.png
 /usr/share/lokalize/icons/hicolor/22x22/actions/nexterror.png
 /usr/share/lokalize/icons/hicolor/22x22/actions/nextfuzzy.png
@@ -179,6 +184,9 @@ popd
 /usr/share/lokalize/icons/hicolor/32x32/actions/insert_arg.png
 /usr/share/lokalize/icons/hicolor/32x32/actions/insert_tag.png
 /usr/share/lokalize/icons/hicolor/32x32/actions/l10n/sr/approved.png
+/usr/share/lokalize/icons/hicolor/32x32/actions/l10n/sr@ijekavian/approved.png
+/usr/share/lokalize/icons/hicolor/32x32/actions/l10n/sr@ijekavianlatin/approved.png
+/usr/share/lokalize/icons/hicolor/32x32/actions/l10n/sr@latin/approved.png
 /usr/share/lokalize/icons/hicolor/32x32/actions/msgid2msgstr.png
 /usr/share/lokalize/icons/hicolor/32x32/actions/nexterror.png
 /usr/share/lokalize/icons/hicolor/32x32/actions/nextfuzzy.png
@@ -196,8 +204,14 @@ popd
 /usr/share/lokalize/icons/hicolor/32x32/actions/transsearch.png
 /usr/share/lokalize/icons/hicolor/48x48/actions/approved.png
 /usr/share/lokalize/icons/hicolor/48x48/actions/l10n/sr/approved.png
+/usr/share/lokalize/icons/hicolor/48x48/actions/l10n/sr@ijekavian/approved.png
+/usr/share/lokalize/icons/hicolor/48x48/actions/l10n/sr@ijekavianlatin/approved.png
+/usr/share/lokalize/icons/hicolor/48x48/actions/l10n/sr@latin/approved.png
 /usr/share/lokalize/icons/hicolor/scalable/actions/approved.svgz
 /usr/share/lokalize/icons/hicolor/scalable/actions/l10n/sr/approved.svgz
+/usr/share/lokalize/icons/hicolor/scalable/actions/l10n/sr@ijekavian/approved.svgz
+/usr/share/lokalize/icons/hicolor/scalable/actions/l10n/sr@ijekavianlatin/approved.svgz
+/usr/share/lokalize/icons/hicolor/scalable/actions/l10n/sr@latin/approved.svgz
 /usr/share/lokalize/icons/locolor/16x16/actions/catalogmanager.png
 /usr/share/lokalize/icons/locolor/16x16/actions/diff.png
 /usr/share/lokalize/icons/locolor/16x16/actions/insert_arg.png
@@ -296,6 +310,8 @@ popd
 /usr/share/doc/HTML/sr/lokalize/original-diff.png
 /usr/share/doc/HTML/sr/lokalize/sync.png
 /usr/share/doc/HTML/sr/lokalize/tmview.png
+/usr/share/doc/HTML/sr@latin/lokalize/index.cache.bz2
+/usr/share/doc/HTML/sr@latin/lokalize/index.docbook
 /usr/share/doc/HTML/sv/lokalize/index.cache.bz2
 /usr/share/doc/HTML/sv/lokalize/index.docbook
 /usr/share/doc/HTML/uk/lokalize/configure_shortcuts.png
