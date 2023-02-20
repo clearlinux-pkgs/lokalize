@@ -6,7 +6,7 @@
 #
 Name     : lokalize
 Version  : 22.12.2
-Release  : 49
+Release  : 50
 URL      : https://download.kde.org/stable/release-service/22.12.2/src/lokalize-22.12.2.tar.xz
 Source0  : https://download.kde.org/stable/release-service/22.12.2/src/lokalize-22.12.2.tar.xz
 Source1  : https://download.kde.org/stable/release-service/22.12.2/src/lokalize-22.12.2.tar.xz.sig
@@ -82,7 +82,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1675638296
+export SOURCE_DATE_EPOCH=1676864181
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -98,7 +98,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1675638296
+export SOURCE_DATE_EPOCH=1676864181
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/lokalize
 cp %{_builddir}/lokalize-%{version}/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/lokalize/9950d3fdce1cff1f71212fb5abd31453c6ee2f8c || :
